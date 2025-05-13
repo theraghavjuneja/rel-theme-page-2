@@ -1,12 +1,25 @@
 import { useState } from 'react'
-
+import html2pdf from 'html2pdf.js';
 import './style.css';
 
 import React from 'react';
 
 // Page 2: Time Cycle
 function YugaCyclePage() {
-  
+  const contentRef = useRef();
+
+  const handleDownload = () => {
+    const element = contentRef.current;
+    const opt = {
+      margin:       0.5,
+      filename:     'affirmations.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  };
+
   return (
     <div className="min-h-screen bg-amber-50 p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
