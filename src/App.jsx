@@ -1,9 +1,7 @@
 import { useState } from 'react'
+import { useRef } from 'react';
 import html2pdf from 'html2pdf.js';
 import './style.css';
-
-import React from 'react';
-
 // Page 2: Time Cycle
 function YugaCyclePage() {
   const contentRef = useRef();
