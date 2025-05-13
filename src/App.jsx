@@ -22,7 +22,7 @@ function YugaCyclePage() {
 
   return (
     <div className="min-h-screen bg-amber-50 p-8">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8" ref={contentRef}>
         <header className="text-center mb-8">
           <h1 className="text-3xl font-bold text-orange-800">धर्म चक्र</h1>
         </header>
@@ -92,6 +92,14 @@ function YugaCyclePage() {
           <p>© 2025 ओमशान्ति ब्रह्मकुमारी</p>
           <p className="mt-2">पृष्ठ 2 / 2</p>
         </footer>
+      </div>
+      <div className="text-center mt-6">
+        <button
+          onClick={handleDownload}
+          className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded"
+        >
+          Download as PDF
+        </button>
       </div>
     </div>
   );
